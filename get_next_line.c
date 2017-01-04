@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line3.c                                   :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/29 14:17:26 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/04 13:42:41 by thgiraud         ###   ########.fr       */
+/*   Created: 2017/01/04 15:10:15 by thgiraud          #+#    #+#             */
+/*   Updated: 2017/01/04 15:10:55 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
-#include <unistd.h>
 
 int			get_next_line(int const fd, char **line)
 {
