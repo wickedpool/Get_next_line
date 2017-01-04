@@ -6,46 +6,59 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/29 14:17:26 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/03 17:40:06 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/01/04 13:29:10 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
+#include <unistd.h>
 
 int			get_next_line(int const fd, char **line)
 {
-	static char		*tab = NULL;
-	char			*tmp;
+	static char		*tmp = NULL;
+	char			*tab;
 	char			*buff;
 	int				ret;
 
-	if (!tab || !line || BUFF_SIZE < 1 || fd < 0 || fd > 255)
-		return (-1);
-	if (!(buff = ft_strnew(BUFF_SIZE)))
-		return (-1);
+
+	printf("--------Bienvenue dans gnl\n");
 	if (tab == NULL)
-		if (!(tab = ft_memalloc(BUFF_SIZE)))
-			return (-1);
+	printf("--------Bienvenue\n");
+		tab = ft_memalloc(BUFF_SIZE);
+	printf("dans gnl\n");
 	tmp = ft_strncpy(ft_memalloc(BUFF_SIZE), tab, BUFF_SIZE);
-	while (!(ft_strchr(tmp, ENDL)))
+	buff = ft_strchr(tmp, ENDL);
+	while (!(buff))
 	{
+		printf("----on est dans le while\n");
 		ret = read(fd, tmp, BUFF_SIZE);
 		if (ret < 0)
 			return (-1);
-		else if (ret == 0)
+		printf("TMP == %s\n", tmp);
+		 if (ret == 0)
 		{
-			if ((ft_strchr(tmp, END)) == tmp)
+			if ((buff = ft_strchr(tmp, END)) == tmp)
 				return (0);
 		}
-		else if (ret > 0)
+		else
 		{
 			tmp[ret] = END;
-			ft_strchr(tmp, ENDL);
-			tab = ft_strjoin(tab, tmp);
+			printf("TMP si ret > 0 et tmp[ret] = END  ==%s\n", tmp);
+			buff = ft_strchr(tmp, ENDL);
+			printf("BUFF ==%s\n", buff);
+			printf("TMP si ret > 0 apres strchr ==%s\n", tmp);
+			tab = ft_strjoin(tmp, tab);
+			printf("TMP ==%s\n", tmp);
+			printf("TAB ==%s\n", tmp);
 		}
+		printf("on sort du while");
 		tab[ft_strchr(tab, ENDL) - tab] = END;
+		printf("TAB ==%s\n", tmp);
 		*line = ft_strdup(tab);
+		printf("LINE ==%s\n", *line);
 		ft_memmove(tab, ft_strchr(tab, ENDL) + 1, ft_strlen(ft_strchr(tab, ENDL)) + 1);
+		printf("TAB FIN ==%s\n", tmp);
 		return (1);
 		free(tmp);
 		free(tab);
