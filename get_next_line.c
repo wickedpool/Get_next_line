@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/29 14:17:26 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/04 13:29:10 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/01/04 13:42:41 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int			get_next_line(int const fd, char **line)
 
 	printf("--------Bienvenue dans gnl\n");
 	if (tab == NULL)
-	printf("--------Bienvenue\n");
 		tab = ft_memalloc(BUFF_SIZE);
 	printf("dans gnl\n");
 	tmp = ft_strncpy(ft_memalloc(BUFF_SIZE), tab, BUFF_SIZE);
