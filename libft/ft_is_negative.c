@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 14:35:17 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/03 14:05:11 by thgiraud         ###   ########.fr       */
+/*   Updated: 2016/11/28 16:24:30 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 void	ft_is_negative(int n)
 {
