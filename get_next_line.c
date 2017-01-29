@@ -20,7 +20,7 @@ int			get_next_line(int const fd, char **line)
 	int				ret;
 
 
-	printf("--------Bienvenue dans gnl\n");
+	printf("---Bienvenue dans gnl\n");
 	if (tab == NULL)
 		tab = ft_memalloc(BUFF_SIZE);
 	printf("dans gnl\n");
