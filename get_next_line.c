@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/30 15:35:52 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/01/30 15:37:21 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ int			read_line(int fd, char **buff)
 	int		ret;
 
 	ret = 1;
-	while (ft_strstr(*buff, ENDL) == NULL && ret != 0)
+	if (tab == NULL)
+		tab = ft_memalloc(BUFF_SIZE);
+	tmp = ft_strncpy(ft_memalloc(BUFF_SIZE), tab, BUFF_SIZE);
+	buff = ft_strchr(tmp, ENDL);
+	while (!(buff))
 	{
 		if (ret = read(fd, tab, BUFF_SIZE) == -1)
 			return (-1);
