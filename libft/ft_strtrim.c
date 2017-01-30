@@ -6,11 +6,11 @@
 /*   By: thgiraud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 13:47:34 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/03 14:22:38 by thgiraud         ###   ########.fr       */
+/*   Updated: 2016/11/16 17:16:03 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 char	*ft_strtrim(char const *s)
 {

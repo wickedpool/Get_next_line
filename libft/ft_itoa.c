@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 11:59:18 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/03 14:07:19 by thgiraud         ###   ########.fr       */
+/*   Updated: 2016/11/17 13:52:02 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 static size_t	ft_get_len(int n)
 {
