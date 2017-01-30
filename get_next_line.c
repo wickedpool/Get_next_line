@@ -5,13 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-<<<<<<< HEAD
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/30 15:37:21 by thgiraud         ###   ########.fr       */
-=======
-/*   Created: 2017/01/04 15:10:15 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/05 16:22:29 by thgiraud         ###   ########.fr       */
->>>>>>> f78ad217263e3f7f42cc08df4cbdd6a1bf0a2662
+/*   Updated: 2017/01/30 17:31:53 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +44,4 @@ int			get_next_line(int const fd, char **line)
 	if (!(buff))
 		buff = ft_memalloc(BUFF_SIZE);
 	ret = read_line(fd, &buff);
-
 }
