@@ -6,12 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/31 11:43:46 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/01/31 17:07:15 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
 int			read_line(int fd, char **buff)
 {
 	char	*tab;
@@ -19,13 +18,7 @@ int			read_line(int fd, char **buff)
 
 	printf("WELCOME READ LINE\n");
 	ret = 1;
-	if (tab == NULL)
-		tab = ft_memalloc(BUFF_SIZE);
-	printf("On alloue tab : %s\n", tab);
-	tab = ft_strncpy(ft_memalloc(BUFF_SIZE), tab, BUFF_SIZE);
-	printf("tab : %s\n", tab);
-	printf("BUFF APRES STRCHR : %s\n", *buff);
-	while (!buff || (*buff = ft_strchr(tab, ENDL)))
+	while (!ft_strchr(*buff, ENDL))
 	{
 		printf("On rentre dans while READ\n");
 		if ((ret = read(fd, tab, BUFF_SIZE)) == -1)
@@ -34,9 +27,6 @@ int			read_line(int fd, char **buff)
 		printf("TAB : %s\n", tab);
 		*buff = ft_strjoin(*buff, tab);
 		printf("BUFF APRES JOINS : %s\n", *buff);
-		ft_memset(*buff, 0, ret);
-		printf("BUFF APRES MEMSET : %s\n", *buff);
-		printf("MYret : %d\n", ret);
 	}
 	return (ret);
 }
