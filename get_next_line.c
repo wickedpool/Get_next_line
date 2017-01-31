@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/30 17:31:53 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/01/31 11:43:46 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,29 @@
 
 int			read_line(int fd, char **buff)
 {
-	char	tab[BUFF_SIZE + 1];
+	char	*tab;
 	int		ret;
 
+	printf("WELCOME READ LINE\n");
 	ret = 1;
 	if (tab == NULL)
 		tab = ft_memalloc(BUFF_SIZE);
-	tmp = ft_strncpy(ft_memalloc(BUFF_SIZE), tab, BUFF_SIZE);
-	buff = ft_strchr(tmp, ENDL);
-	while (!(buff))
+	printf("On alloue tab : %s\n", tab);
+	tab = ft_strncpy(ft_memalloc(BUFF_SIZE), tab, BUFF_SIZE);
+	printf("tab : %s\n", tab);
+	printf("BUFF APRES STRCHR : %s\n", *buff);
+	while (!buff || (*buff = ft_strchr(tab, ENDL)))
 	{
-		if (ret = read(fd, tab, BUFF_SIZE) == -1)
+		printf("On rentre dans while READ\n");
+		if ((ret = read(fd, tab, BUFF_SIZE)) == -1)
 			return (-1);
 		tab[ret] = END;
+		printf("TAB : %s\n", tab);
 		*buff = ft_strjoin(*buff, tab);
+		printf("BUFF APRES JOINS : %s\n", *buff);
 		ft_memset(*buff, 0, ret);
+		printf("BUFF APRES MEMSET : %s\n", *buff);
+		printf("MYret : %d\n", ret);
 	}
 	return (ret);
 }
@@ -39,9 +47,35 @@ int			get_next_line(int const fd, char **line)
 	char		*tmp;
 	int			ret;
 
+	printf("WELCOME TO GNL\n");
 	if (BUFF_SIZE <= 0 || fd <= 0)
 		return (-1);
-	if (!(buff))
+	printf("GESTION D'ERREUR\n");
+	if (!buff)
+	{
+		printf("ON ALLOUE BUFF\n");
 		buff = ft_memalloc(BUFF_SIZE);
-	ret = read_line(fd, &buff);
+		buff[0] = 0;
+		printf("BUFF : %s\n", buff);
+	}
+	if (ret == 0)
+		ret = read_line(fd, &buff);
+	printf("ret : %d\n", ret);
+	if (*line)
+		ret = 1;
+	return (ret);
+}
+
+int		main(int argc, char **argv)
+{
+	int		fd;
+	char	*line;
+
+	if (argc || argv)
+		;
+	fd = open(argv[1], O_RDONLY);
+	while (get_next_line(fd, &line) == 1)
+		printf("%s", line);
+	close(fd);
+	return (0);
 }
