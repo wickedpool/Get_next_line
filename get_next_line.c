@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/01/31 17:07:15 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/01/31 18:18:05 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ int			read_line(int fd, char **buff)
 	while (!ft_strchr(*buff, ENDL))
 	{
 		printf("On rentre dans while READ\n");
-		if ((ret = read(fd, tab, BUFF_SIZE)) == -1)
-			return (-1);
+		ret = read(fd, tab, BUFF_SIZE);
 		tab[ret] = END;
 		printf("TAB : %s\n", tab);
 		*buff = ft_strjoin(*buff, tab);
@@ -41,15 +40,17 @@ int			get_next_line(int const fd, char **line)
 	if (BUFF_SIZE <= 0 || fd <= 0)
 		return (-1);
 	printf("GESTION D'ERREUR\n");
-	if (!buff)
+	if (!buff) //MALLOC BUFF
 	{
 		printf("ON ALLOUE BUFF\n");
 		buff = ft_memalloc(BUFF_SIZE);
 		buff[0] = 0;
 		printf("BUFF : %s\n", buff);
 	}
-	if (ret == 0)
-		ret = read_line(fd, &buff);
+	if (ret < 0)
+		return (-1)
+	else if (ret == 0) // LET'S READ
+		ret = read_line(fd, &buff); //HEADING TO READLINE
 	printf("ret : %d\n", ret);
 	if (*line)
 		ret = 1;
