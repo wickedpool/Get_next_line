@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/01 14:38:38 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/01 17:31:16 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,55 @@ int			read_line(int fd, char **buff)
 	return (ret);
 }
 
-static int	ft_verif(char **buff, char **tab, char **line)
+static int	endline(char *buff)
 {
-	
+	int		count;
+
+	count = 0;
+	while (buff[count] != ENDL && buff[i])
+		i++;
+	if (buff[count] == ENDL)
+	{
+		buff[count] = END;
+		return (count)
+	}
+	else
+		return (-1);
+}
+
+static char	join(char *buff, char *tab)
+{
+	size_t	i;
+	size_t	j;
+	char	*ptr;
+
+	i = ft_strlen(buff);
+	j = ft_strlen(tab);
+	ptr = (char *)malloc(sizeof(*ptr) * (i + j + 1));
+	ft_memcpy(ptr, buff, i);
+	ft_memcpy(ptr + i, tab, s2);
+	ptr[i + j] = '\0';
+	free(buff);
+	ft_bzero(s2, BUFF_ZIZE + 1);
+	return (ptr);
+}
+
+static int	verif(char **buff, char **tab, char **line)
+{
+	char	*ptr;
+	int		final;
+
+	*buff = join(*buff, *tab);
+	final = endline(*buff)
+	if (final > -1)
+	{
+		*line = ft_strdup(*buff);
+		ptr = *buff;
+		*buff = ft_strdup(*buff + final + 1);
+		free(ptr);
+		return (1);
+	}
+	return (0);
 }
 
 int			get_next_line(int const fd, char **line)
@@ -43,7 +89,7 @@ int			get_next_line(int const fd, char **line)
 		return (-1);
 	while ((ret = read(fd, tmp, BUFF_SIZE)) > 0)
 	{
-		result = ft_verif(&buff[fd], &tab, line);
+		result = verif(&buff[fd], &tab, line);
 		free(tmp);
 	}
 	else if (ret == 0) // LET'S READ
