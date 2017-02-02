@@ -6,25 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/01 18:43:30 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/02 15:11:43 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-int			read_line(int fd, char **buff)
-{
-	char	*tab;
-	int		ret;
-
-	ret = 1;
-	while (!ft_strchr(*buff, ENDL))
-	{
-		ret = read(fd, tab, BUFF_SIZE);
-		tab[ret] = END;
-		*buff = ft_strjoin(*buff, tab);
-	}
-	return (ret);
-}
 
 static int	endline(char *buff)
 {
@@ -79,7 +65,7 @@ static int	verif(char **buff, char **tab, char **line)
 
 int			get_next_line(int const fd, char **line)
 {
-	static char *buff;
+	static char *buff[256];
 	char		*tmp;
 	int			result;
 	int			ret;
@@ -91,12 +77,19 @@ int			get_next_line(int const fd, char **line)
 	{
 		result = verif(&buff[fd], &tab, line);
 		free(tmp);
+		if (result == 1)
+			return (1);
+		buff = ft_strnew(BUFF_SIZE);
 	}
-	else if (ret == 0) // LET'S READ
-		ret = read_line(fd, &buff); //HEADING TO READLINE
-	if (*line)
-		ret = 1;
-	return (ret);
+	if (result = verif(&buff[fd], &tmp, line)) // LET'S VERIF
+		return (1); //HEADING TO RETURN
+	else if (ft_strlen(buff[fd]) > 0)
+	{
+		*line = ft_strdup(buff[fd]);
+		ft_strdel(&buff[fd]);
+		return (1);
+	}
+	return (result);
 }
 
 int		main(int argc, char **argv)
