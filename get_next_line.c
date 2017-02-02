@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/02 15:20:41 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/02 16:15:43 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static char	*join(char *buff, char *tab)
 	ft_memcpy(ptr + i, tab, j);
 	ptr[i + j] = '\0';
 	free(buff);
-	ft_bzero(s2, BUFF_SIZE + 1);
+	ft_bzero(tab, BUFF_SIZE + 1);
 	return (ptr);
 }
 
@@ -65,7 +65,7 @@ static int	verif(char **buff, char **tab, char **line)
 
 int			get_next_line(int const fd, char **line)
 {
-	static char buff[256];
+	static char *buff[256];
 	char		*tmp;
 	int			result;
 	int			ret;
@@ -79,7 +79,7 @@ int			get_next_line(int const fd, char **line)
 		free(tmp);
 		if (result == 1)
 			return (1);
-		buff = ft_strnew(BUFF_SIZE);
+		tmp = ft_strnew(BUFF_SIZE);
 	}
 	if ((result = verif(&buff[fd], &tmp, line))) // LET'S VERIF
 		return (1); //HEADING TO RETURN
