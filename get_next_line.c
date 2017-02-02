@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/02 15:11:43 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/02 15:18:24 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ static int	endline(char *buff)
 	int		count;
 
 	count = 0;
-	while (buff[count] != ENDL && buff[i])
-		i++;
+	while (buff[count] != ENDL && buff[count])
+		count++;
 	if (buff[count] == ENDL)
 	{
 		buff[count] = END;
-		return (count)
+		return (count);
 	}
 	else
 		return (-1);
 }
 
-static char	join(char *buff, char *tab)
+static char	*join(char *buff, char *tab)
 {
 	size_t	i;
 	size_t	j;
@@ -38,10 +38,10 @@ static char	join(char *buff, char *tab)
 	j = ft_strlen(tab);
 	ptr = (char *)malloc(sizeof(*ptr) * (i + j + 1));
 	ft_memcpy(ptr, buff, i);
-	ft_memcpy(ptr + i, tab, s2);
+	ft_memcpy(ptr + i, tab, j);
 	ptr[i + j] = '\0';
 	free(buff);
-	ft_bzero(s2, BUFF_ZIZE + 1);
+	ft_bzero(s2, BUFF_SIZE + 1);
 	return (ptr);
 }
 
