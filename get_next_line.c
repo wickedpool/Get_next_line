@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/02 15:18:24 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/02 15:20:41 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	verif(char **buff, char **tab, char **line)
 	int		final;
 
 	*buff = join(*buff, *tab);
-	final = endline(*buff)
+	final = endline(*buff);
 	if (final > -1)
 	{
 		*line = ft_strdup(*buff);
@@ -65,7 +65,7 @@ static int	verif(char **buff, char **tab, char **line)
 
 int			get_next_line(int const fd, char **line)
 {
-	static char *buff[256];
+	static char buff[256];
 	char		*tmp;
 	int			result;
 	int			ret;
@@ -75,13 +75,13 @@ int			get_next_line(int const fd, char **line)
 		return (-1);
 	while ((ret = read(fd, tmp, BUFF_SIZE)) > 0)
 	{
-		result = verif(&buff[fd], &tab, line);
+		result = verif(&buff[fd], &tmp, line);
 		free(tmp);
 		if (result == 1)
 			return (1);
 		buff = ft_strnew(BUFF_SIZE);
 	}
-	if (result = verif(&buff[fd], &tmp, line)) // LET'S VERIF
+	if ((result = verif(&buff[fd], &tmp, line))) // LET'S VERIF
 		return (1); //HEADING TO RETURN
 	else if (ft_strlen(buff[fd]) > 0)
 	{
