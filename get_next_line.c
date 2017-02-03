@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/02 18:50:42 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/03 15:14:38 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,17 @@ int			get_next_line(int const fd, char **line)
 	int			result;
 	int			ret;
 
+	printf("-----------------------------ENTRY-GNL\n");
 	tmp = ft_strnew(BUFF_SIZE);
 	if (BUFF_SIZE <= 0 || fd < 0 || (ret = read(fd, tmp, 0)) < 0)
 		return (-1);
+	printf("-----------------------------HEADING TO FIRST WHILE\n");
 	while ((ret = read(fd, tmp, BUFF_SIZE)) > 0)
 	{
+		printf("On est dans le while\n");
+		printf("RET =%d\n", ret);
 		result = verif(&buff[fd], &tmp, line);
+		printf("RESULT =%d\n", result);
 		free(tmp);
 		if (result == 1)
 			return (1);
