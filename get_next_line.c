@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/03 15:14:38 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/03 16:02:32 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,13 @@ static int	endline(char *buff)
 	int		count;
 
 	count = 0;
+	printf("---------------------------ENTRY-ENDLINE\n");
 	while (buff[count] != ENDL && buff[count])
+	{
 		count++;
+		printf("COUNT = %d\n", count);
+	}
+	printf("BUFF dans ENDLINE = %s\n", buff);
 	if (buff[count] == ENDL)
 	{
 		buff[count] = END;
@@ -34,6 +39,7 @@ static char	*join(char *buff, char *tab)
 	size_t	j;
 	char	*ptr;
 
+	printf("---------------------------ENTRY-JOIN\n");
 	i = ft_strlen(buff);
 	j = ft_strlen(tab);
 	ptr = (char *)malloc(sizeof(*ptr) * (i + j + 1));
@@ -50,6 +56,7 @@ static int	verif(char **buff, char **tab, char **line)
 	char	*ptr;
 	int		final;
 
+	printf("---------------------------ENTRY-VERIF\n");
 	*buff = join(*buff, *tab);
 	final = endline(*buff);
 	if (final > -1)
