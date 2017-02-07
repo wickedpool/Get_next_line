@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/03 16:02:32 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/07 17:39:13 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static int	endline(char *buff)
 	if (buff[count] == ENDL)
 	{
 		buff[count] = END;
+		printf("BUFF dans if ENDLINE = %s\n", buff);
 		return (count);
 	}
 	else
@@ -40,11 +41,18 @@ static char	*join(char *buff, char *tab)
 	char	*ptr;
 
 	printf("---------------------------ENTRY-JOIN\n");
-	i = ft_strlen(buff);
-	j = ft_strlen(tab);
+	if (buff)
+		i = ft_strlen(buff);
+	printf("I dans join = %zu\n", i);
+	if (tab)
+		j = ft_strlen(tab);
+	printf("J dans join = %zu\n", j);
 	ptr = (char *)malloc(sizeof(*ptr) * (i + j + 1));
 	ft_memcpy(ptr, buff, i);
+		printf("PTR apres 1st memcpy = %s\n", ptr);
+		printf("BUFF apres 1st memcpy = %s\n", buff);
 	ft_memcpy(ptr + i, tab, j);
+		printf("PTR apres 2nd memcpy = %s\n", ptr);
 	ptr[i + j] = '\0';
 	free(buff);
 	ft_bzero(tab, BUFF_SIZE + 1);
@@ -58,6 +66,7 @@ static int	verif(char **buff, char **tab, char **line)
 
 	printf("---------------------------ENTRY-VERIF\n");
 	*buff = join(*buff, *tab);
+	printf("apel a join \n");
 	final = endline(*buff);
 	if (final > -1)
 	{
