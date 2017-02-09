@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/07 17:39:13 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/09 11:17:54 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int			get_next_line(int const fd, char **line)
 	while ((ret = read(fd, tmp, BUFF_SIZE)) > 0)
 	{
 		printf("On est dans le while\n");
+		printf("TMP = %s\n", tmp);
 		printf("RET =%d\n", ret);
 		result = verif(&buff[fd], &tmp, line);
 		printf("RESULT =%d\n", result);
