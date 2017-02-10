@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/09 11:17:54 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/10 13:19:13 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,13 @@ static int	verif(char **buff, char **tab, char **line)
 	int		final;
 
 	printf("---------------------------ENTRY-VERIF\n");
-	*buff = join(*buff, *tab);
 	printf("apel a join \n");
+	*buff = join(*buff, *tab);
+	printf("apel a endline \n");
 	final = endline(*buff);
 	if (final > -1)
 	{
+		ft_putstr("welcome to if verif\n");
 		*line = ft_strdup(*buff);
 		ptr = *buff;
 		*buff = ft_strdup(*buff + final + 1);
