@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/10 16:03:56 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/10 16:09:48 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ static char	*join(char *buff, char *tab)
 	if (tab)
 		j = ft_strlen(tab);
 	ptr = (char *)malloc(sizeof(*ptr) * (i + j + 1));
-	ft_memcpy(ptr, buff, i);
-	ft_memcpy(ptr + i, tab, j);
+	if (buff)
+		ft_memcpy(ptr, buff, i);
+	if (tab)
+		ft_memcpy(ptr + i, tab, j);
 	ptr[i + j] = '\0';
 	free(buff);
 	ft_bzero(tab, BUFF_SIZE + 1);
