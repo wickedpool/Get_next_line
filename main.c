@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/27 14:54:35 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/10 14:39:06 by thgiraud         ###   ########.fr       */
+/*   Created: 2017/02/10 14:23:22 by thgiraud          #+#    #+#             */
+/*   Updated: 2017/02/10 14:36:50 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
 
-# include "libft/includes/libft.h"
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdio.h>
-# define BUFF_SIZE 10 
-# define ENDL '\n'
-# define END '\0'
+int		main(int argc, char **argv)
+{
+	int		fd;
+	char	*line;
 
-int		get_next_line(const int fd, char **line);
-
-#endif
+	if (argc || argv)
+		;
+	fd = open(argv[1], O_RDONLY);
+	while (get_next_line(fd, &line) == 1)
+		printf("%s\n", line);
+	close(fd);
+	return (0);
+}
