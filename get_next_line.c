@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+/* hibro */
 
 static int	endline(char *buff)
 {
