@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* hibro */
 #include "get_next_line.h"
 
 static int	endline(char *buff)
