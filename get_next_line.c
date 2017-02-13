@@ -6,11 +6,10 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/11 18:26:43 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 09:25:38 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* hibro */
 #include "get_next_line.h"
 
 static int	endline(char *buff)
