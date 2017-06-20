@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 14:54:35 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/02/10 16:13:08 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 12:11:27 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
-# define BUFF_SIZE 10 
+# define BUFF_SIZE 32 
 # define ENDL '\n'
 # define END '\0'
 
