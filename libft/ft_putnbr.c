@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:50:38 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/18 13:42:22 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 14:03:49 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 void	ft_putnbr(int n)
 {

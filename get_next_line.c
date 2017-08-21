@@ -6,7 +6,7 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 08:42:48 by thgiraud          #+#    #+#             */
-/*   Updated: 2017/04/28 01:47:53 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/08/01 16:44:57 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static int	endline(char *buff)
 {
 	int		count;
 
-	printf("endline\n");
 	count = 0;
 	while (buff[count] != ENDL && buff[count])
 		count++;
@@ -35,7 +34,6 @@ static char	*join(char *buff, char *tab)
 	size_t	j;
 	char	*ptr;
 
-	printf("Join\n");
 	i = 0;
 	j = 0;
 	if (buff)
@@ -56,7 +54,6 @@ static int	verif(char **buff, char **tab, char **line)
 	char	*ptr;
 	int		final;
 
-	printf("verif\n");
 	*buff = join(*buff, *tab);
 	final = endline(*buff);
 	if (final > -1)
@@ -72,23 +69,17 @@ static int	verif(char **buff, char **tab, char **line)
 
 int			get_next_line(int const fd, char **line)
 {
-	static char *buff[256];
+	static char *buff[12000];
 	char		*tmp;
 	int			result;
 	int			ret;
 
-	printf("getnextline\n");
 	tmp = ft_strnew(BUFF_SIZE);
-	if (BUFF_SIZE <= 0 || fd < 0 || (ret = read(fd, tmp, 0)) < 0)
+	if (!line || BUFF_SIZE <= 0 || fd < 0 || (ret = read(fd, tmp, 0)) < 0)
 		return (-1);
 	while ((ret = read(fd, tmp, BUFF_SIZE)) > 0)
 	{
-		printf("RET = %d\n", ret);
-		printf("TMP = %s\n", tmp);
 		result = verif(&buff[fd], &tmp, line);
-		printf("TMP v2 = %s\n", tmp);
-		ft_putstr("LINE = ");
-		ft_putendl(*line);
 		free(tmp);
 		if (result == 1)
 			return (1);

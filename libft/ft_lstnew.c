@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 10:30:22 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/17 14:44:39 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 12:45:42 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {

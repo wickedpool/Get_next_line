@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 14:53:20 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/17 14:30:13 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 14:34:30 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 static int		ft_split_count(char const *s, char c)
 {

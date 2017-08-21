@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 12:02:09 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/20 20:02:53 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 14:23:53 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strnstr(const char *big, const char *small, size_t len)
 {

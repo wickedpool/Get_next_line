@@ -6,11 +6,11 @@
 /*   By: thgiraud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 18:27:27 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/14 14:55:27 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 14:23:30 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strnew(size_t size)
 {

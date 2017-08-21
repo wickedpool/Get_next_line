@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 13:10:51 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/18 13:16:29 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 12:42:27 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {

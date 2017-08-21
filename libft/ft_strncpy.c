@@ -6,11 +6,11 @@
 /*   By: thgiraud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 13:06:56 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/16 10:58:13 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 14:22:02 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {

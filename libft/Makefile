@@ -6,7 +6,7 @@
 #    By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/09 11:25:59 by thgiraud          #+#    #+#              #
-#    Updated: 2016/11/18 15:27:29 by thgiraud         ###   ########.fr        #
+#    Updated: 2017/02/13 15:22:58 by thgiraud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 GCFLAGS = gcc -Wall -Wextra -Werror
 
-INC = ./libft.h
+INC = ./includes/libft.h
 
 SRCS = ./ft_atoi.c ./ft_memccpy.c ./ft_strcat.c ./ft_strncpy.c ./ft_bzero.c \
 	   ./ft_memchr.c ./ft_strchr.c ./ft_strnequ.c ./ft_foreach.c \

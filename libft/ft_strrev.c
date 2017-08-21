@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 14:26:03 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/18 14:28:00 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 14:28:57 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 char		*ft_strrev(char *str)
 {

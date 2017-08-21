@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:53:38 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/11 16:43:02 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 12:41:51 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 int		ft_isprint(int c)
 {

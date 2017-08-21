@@ -6,9 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 14:48:09 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/18 14:48:38 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 12:39:45 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "includes/libft.h"
 
 void	ft_foreach(int *tab, int length, void (*f)(int))
 {

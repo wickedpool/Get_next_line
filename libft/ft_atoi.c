@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:03:43 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/12 14:54:30 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 12:39:00 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 int			ft_atoi(const char *nprt)
 {

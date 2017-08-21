@@ -6,11 +6,11 @@
 /*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 16:49:26 by thgiraud          #+#    #+#             */
-/*   Updated: 2016/11/17 14:38:57 by thgiraud         ###   ########.fr       */
+/*   Updated: 2017/02/13 14:14:14 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 size_t			ft_strlcat(char *dst, const char *src, size_t size)
 {
