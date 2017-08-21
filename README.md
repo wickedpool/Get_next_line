@@ -14,9 +14,11 @@ C Language
 
 You'll have to clone the GNL repo by taping :
 
-        https://github.com/wickedpool/Get_next_line-42.git
+        git clone https://github.com/wickedpool/Get_next_line-42.git gnl
 
 Then you'll have to compile the project :
+
+        cd gnl
 
         gcc -Wall -Wextra -Werror get_next_line.c main.c get_next_line.h libft/libft.a
 
@@ -29,3 +31,9 @@ Get_Next_line will return 1, 0 or -1 if the program rode the file or not.
 The main.c file will print what GNL is reading.
 
         E N J O Y ^^
+        
+[What it looks like while running]
+
+<p align="center">
+  <img src="https://github.com/wickedpool/Get_next_line-42/blob/master/img/gnl_sample.png" width="90%"/>
+</p>
